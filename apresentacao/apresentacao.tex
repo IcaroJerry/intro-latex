@@ -1,0 +1,99 @@
+% 2015-05-21 - Emerson Ribeiro de Mello - mello@ifsc.edu.br
+% \documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% usando tema personalizado. 
+% arquivo beamerthemeIFSC.sty deve estar no mesmo diretório do .tex
+\usepackage{beamerthemeIFSC}
+\usepackage{tikz}
+\usepackage{xargs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{soul} %fazer texto tachado
+\usepackage{epigraph}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+
+
+\usepackage{xargs}
+%
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+%
+
+\hypersetup{pdfstartview={Fit},pdftitle={\@title},
+ 	pdfsubject={IFBA},pdfauthor={\@author}
+}
+
+\hyphenation{ob-je-ti-vo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{Conhecendo o \LaTeX}
+\subtitle{mudando a perspectiva}
+\author{Ícaro Jerry}
+\date{29 de março de 2017}
+\institute{Instituto Federal da Bahia\\
+campus Salvador\\
+\url{icarojerry@ifba.edu.br}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}[t]
+	\maketitle
+\end{frame}
+
+% Descomente as linhas abaixo se desejar colocar um sumário de todas as seções
+\begin{frame}[t]{Agenda}
+\tableofcontents
+\end{frame}
+
+% O trecho de código abaixo serve para sobrescrever regras do template
+\def\sectionname{}
+\def\insertsectionnumber{}
+\def\subsectionname{}
+\def\insertsubsectionnumber{}
+
+\AtBeginSection{\frame{\sectionpage}\addtocounter{framenumber}{-1}}
+
+
+\AtBeginSubsection{\frame{\subsectionpage}\addtocounter{framenumber}{-1} }
+\AtBeginSubsubsection{\frame{\subsubsectionpage}\addtocounter{framenumber}{-1} }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inicio do documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{secoes/00_APRESENTACAO}
+
+\section{Introdução}
+\include{secoes/00_INTRO}
+
+\section{Instalando o \LaTeX}
+\include{secoes/01_INSTALL}
+
+\section{Estruturas Básicas}
+\include{secoes/02_ESTRUTURAS}
+
+\section{Conhecendo os Recursos Disponíveis}
+\include{secoes/03_RECURSOS}
+
+\section{Criando projetos em \LaTeX}
+\include{secoes/04_PRATICAS}
+
+%Finalizando
+\include{secoes/05_FINAL}
+
+\end{document}
